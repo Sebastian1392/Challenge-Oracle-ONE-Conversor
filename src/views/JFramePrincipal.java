@@ -2,6 +2,9 @@ package views;
 
 import java.awt.Dimension;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyListener;
+
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 public class JFramePrincipal extends JFrame {
@@ -10,19 +13,47 @@ public class JFramePrincipal extends JFrame {
 
     private PanelPrincipal panelPrincipal;
 
-    public JFramePrincipal(ActionListener listener) {
-        setMinimumSize(new Dimension(700, 400));
+    public JFramePrincipal(ActionListener listener, KeyListener keyListener) {
+        setMinimumSize(new Dimension(300, 200));
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        // setIconImage(new ImageIcon("resources/img/logo3.png").getImage());
+        setResizable(false);
+        setIconImage(new ImageIcon("src/resources/logo.png").getImage());
         setTitle(TITLE);
-        initComponents(listener);
+        initComponents(listener, keyListener);
         setLocationRelativeTo(null);
         setVisible(true);
     }
 
-    private void initComponents(ActionListener listener){
-        this.panelPrincipal = new PanelPrincipal(listener);
+    private void initComponents(ActionListener listener, KeyListener keyListener) {
+        this.panelPrincipal = new PanelPrincipal(listener, keyListener);
         this.add(panelPrincipal);
     }
 
+    public String getConversorOption() {
+        return panelPrincipal.getConversorOption();
+    }
+
+    public void addPanelConvertCurrency() {
+        panelPrincipal.addPanelConvertCurrency();
+    }
+
+    public void addPanelConvertMeasure() {
+        panelPrincipal.addPanelConvertMeasure();
+    }
+
+    public void removePanels() {
+        panelPrincipal.removePanels();
+    }
+
+    public double getInputValue() {
+        return panelPrincipal.getInputValue();
+    }
+
+    public void setInputResult(Object[] resultAndCurrency) {
+        panelPrincipal.setInputResult(resultAndCurrency);
+    }
+
+    public String getSelection() {
+        return panelPrincipal.getSelection();
+    }
 }
