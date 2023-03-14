@@ -37,3 +37,5 @@ La vista hace uso de las clases de la librería Swing como JFrame, JPanel, etc..
 ubican los componentes para finalmente visualizar la interfaz que se le muestra al usuario final.
 
 **Para ejecutar la aplicación desde un IDE, buscar el método main en la clase [Controller](./src/controllers/Controller.java)**
+** de lo contrario ejecutar el archivo [JAR](./conversorChallenge.jar) generado para acceder de manera sencilla de a la aplicación.**
+
